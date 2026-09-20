@@ -123,20 +123,20 @@ def build_analysis_plots(audio_float, resampled_float, fs_in, fs_out, target_nyq
 
 def render_streamlit_app():
     """Renders the Streamlit frontend layout, sliders, and audio modules."""
-    st.set_page_config(page_title="Audio Rate conversion", layout="wide")
+    st.set_page_config(page_title="Audio Sampling Rate conversion", layout="wide")
 
     st.markdown(
         "<h1 style='text-align: center; color: #1e3a8a; font-weight: bold;'>BS Signals Project: 23F3000288</h1>", 
         unsafe_allow_html=True
     )
     
-    st.title("🎛️ Audio Rate Conversion")
+    st.title("🎛️ Audio Sampling Rate Conversion")
     st.write("Input sample rates, listen to the audio outputs, and evaluate energy distortion.")
 
     # Sidebar Controls
     st.sidebar.header("Signal Configuration")
-    fs_in = st.sidebar.slider("Original Input Rate (Hz)", min_value=8000, max_value=48000, value=44100, step=1000)
-    fs_out = st.sidebar.slider("Target Output Rate (Hz)", min_value=4000, max_value=48000, value=11256, step=1000)
+    fs_in = st.sidebar.slider("Original Sampling Rate (Hz)", min_value=8000, max_value=48000, value=44100, step=1000)
+    fs_out = st.sidebar.slider("Target Sampling Rate (Hz)", min_value=4000, max_value=48000, value=11256, step=1000)
 
     # Core Execution Flow
     tone_mix = generate_test_tone(fs_in)
