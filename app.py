@@ -124,6 +124,12 @@ def build_analysis_plots(audio_float, resampled_float, fs_in, fs_out, target_nyq
 def render_streamlit_app():
     """Renders the Streamlit frontend layout, sliders, and audio modules."""
     st.set_page_config(page_title="Audio Rate conversion", layout="wide")
+
+    st.markdown(
+        "<h1 style='text-align: center; color: #1e3a8a; font-weight: bold;'>BS Signals Project: 23F3000288</h1>", 
+        unsafe_allow_html=True
+    )
+    
     st.title("🎛️ Audio Rate Conversion")
     st.write("Input sample rates, listen to the audio outputs, and evaluate energy distortion.")
 
